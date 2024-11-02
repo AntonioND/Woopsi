@@ -92,9 +92,10 @@ Requirements
 ------------
 
 To run the project you will need either a DS emulator or a real DS and a flash
-cart.  To compile the project you need [devKitPro][1].
+cart.  To compile the project you need [devKitPro][1] or [BlocksDS][2].
 
   [1]: http://devkitpro.org
+  [2]: https://blocksds.github.io/docs/
 
 
 SDL Compatibility

@@ -1,0 +1,27 @@
+# SPDX-License-Identifier: CC0-1.0
+#
+# SPDX-FileContributor: Antonio Niño Díaz, 2024
+
+BLOCKSDS		?= /opt/blocksds/core
+BLOCKSDSEXT		?= /opt/blocksds/external
+
+# User config
+
+NAME		:= $(shell basename $(CURDIR))
+GAME_TITLE	:= Demo Project
+GAME_SUBTITLE	:= Using Woopsi
+GAME_AUTHOR	:= woopsi.org
+
+# Source code paths
+# -----------------
+
+SOURCEDIRS	:= src
+INCLUDEDIRS	:= src
+
+# Libraries
+# ---------
+
+LIBS		:= -lwoopsi -lnds9
+LIBDIRS		:= $(BLOCKSDSEXT)/libwoopsi
+
+include $(BLOCKSDS)/sys/default_makefiles/rom_arm9/Makefile
