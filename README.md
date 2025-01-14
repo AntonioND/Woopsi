@@ -97,6 +97,18 @@ cart.  To compile the project you need [devKitPro][1] or [BlocksDS][2].
   [1]: http://devkitpro.org
   [2]: https://blocksds.github.io/docs/
 
+You can install this library in BlocksDS with `wf-pacman` directly:
+
+```bash
+wf-pacman -Sy blocksds-libwoopsi
+```
+
+If you want to build the library from source, simply run this to build and
+install the library in your BlocksDS environment:
+
+```bash
+make -j`nproc` install
+```
 
 SDL Compatibility
 -----------------
