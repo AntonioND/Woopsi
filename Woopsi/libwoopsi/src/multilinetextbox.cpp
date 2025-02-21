@@ -40,8 +40,9 @@ MultiLineTextBox::MultiLineTextBox(s16 x, s16 y, u16 width, u16 height, const Wo
 
 	_cursorPos = 0;
 	_showCursor = true;
+	_firstDraw = !text.getLength();
 
-	setText(text);
+	setText(_firstDraw ? "." : text);
 }
 
 void MultiLineTextBox::drawText(GraphicsPort* port) {
@@ -73,6 +74,11 @@ void MultiLineTextBox::drawText(GraphicsPort* port) {
 	while (currentRow <= bottomRow) {
 		drawRow(port, currentRow);
 		currentRow++;
+	}
+
+	if (_firstDraw) {
+		_firstDraw = false;
+		setText("");
 	}
 }
 
