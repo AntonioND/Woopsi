@@ -215,6 +215,7 @@ namespace WoopsiUI {
 		s32 _cursorPos;					/**< Position of the cursor within the string. */
 		bool _showCursor;				/**< Set to true to make cursor visible. */
 		bool _opensKeyboard;			/**< Set to false to disable keyboard popup when double-clicked. */
+		bool _firstDraw;
 
 		/**
 		 * Get the co-ordinates of the cursor relative to the text.
