@@ -148,7 +148,7 @@ void SliderHorizontal::onResize(u16 width, u16 height) {
 
 	// Remember current values
 	s32 oldValue = getValue();
-	bool events = raisesEvents();
+	bool events = getRaisesEvents();
 
 	// Disable event raising
 	setRaisesEvents(false);

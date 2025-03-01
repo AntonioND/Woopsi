@@ -133,7 +133,7 @@ void ScrollbarHorizontal::onResize(u16 width, u16 height) {
 
 	// Remember current values
 	s16 value = getValue();
-	bool events = raisesEvents();
+	bool events = getRaisesEvents();
 
 	// Disable event raising
 	setRaisesEvents(false);

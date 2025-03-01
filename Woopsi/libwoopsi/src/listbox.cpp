@@ -206,7 +206,7 @@ void ListBox::onDoubleClick(s16 x, s16 y) {
 	s32 newSelectedIndex = (-_canvasY + (y - getY())) / getOptionHeight();	
 
 	// Double-click - select the item exclusively
-	bool raisedEvents = raisesEvents();
+	bool raisedEvents = getRaisesEvents();
 	setRaisesEvents(false);
 	deselectAllOptions();
 	setRaisesEvents(raisedEvents);

@@ -424,6 +424,12 @@ namespace WoopsiUI {
 		inline void setRaisesEvents(const bool raisesEvents) { _flags.raisesEvents = raisesEvents; };
 
 		/**
+		 * Check if this gadget raises events or not.
+		 * @return True if the raisesEvents flag is set.
+		 */
+		inline const bool getRaisesEvents() const { return _flags.raisesEvents; };
+
+		/**
 		 * Sets the background colour.
 		 * @param colour The new background colour.
 		 */
