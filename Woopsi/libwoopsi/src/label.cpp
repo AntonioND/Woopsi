@@ -92,25 +92,13 @@ void Label::setTextAlignmentVert(TextAlignmentVert alignment) {
 
 void Label::setText(const WoopsiString& text) {
 
-	u16 oldWidth = getFont()->getStringWidth(_text);
-	u16 oldX = _textX;
-	u16 oldY = _textY;
+	markTextRectDamaged();
 
 	_text.setText(text);
 
 	calculateTextPositionHorizontal();
 
-	u16 newWidth = getFont()->getStringWidth(_text);
-	u16 newX = _textX;
-	u16 newY = _textY;
-
-	Rect rect;
-	rect.x = newX < oldX ? newX : oldX;
-	rect.y = newY < oldY ? newY : oldY;
-	rect.width = newWidth > oldWidth ? newWidth : oldWidth;
-	rect.height = getFont()->getHeight();
-
-	markRectDamaged(rect);
+	markTextRectDamaged();
 
 	if (raisesEvents()) {
 		_gadgetEventHandler->handleValueChangeEvent(*this);
@@ -119,25 +107,13 @@ void Label::setText(const WoopsiString& text) {
 
 void Label::appendText(const WoopsiString& text) {
 
-	u16 oldWidth = getFont()->getStringWidth(_text);
-	u16 oldX = _textX;
-	u16 oldY = _textY;
+	markTextRectDamaged();
 
 	_text.append(text);
 
 	calculateTextPositionHorizontal();
 
-	u16 newWidth = getFont()->getStringWidth(_text);
-	u16 newX = _textX;
-	u16 newY = _textY;
-
-	Rect rect;
-	rect.x = newX < oldX ? newX : oldX;
-	rect.y = newY < oldY ? newY : oldY;
-	rect.width = newWidth > oldWidth ? newWidth : oldWidth;
-	rect.height = getFont()->getHeight();
-
-	markRectDamaged(rect);
+	markTextRectDamaged();
 
 	if (raisesEvents()) {
 		_gadgetEventHandler->handleValueChangeEvent(*this);
@@ -146,25 +122,13 @@ void Label::appendText(const WoopsiString& text) {
 
 void Label::insertText(const WoopsiString& text, const u32 index) {
 
-	u16 oldWidth = getFont()->getStringWidth(_text);
-	u16 oldX = _textX;
-	u16 oldY = _textY;
+	markTextRectDamaged();
 
 	_text.insert(text, index);
 
 	calculateTextPositionHorizontal();
 
-	u16 newWidth = getFont()->getStringWidth(_text);
-	u16 newX = _textX;
-	u16 newY = _textY;
-
-	Rect rect;
-	rect.x = newX < oldX ? newX : oldX;
-	rect.y = newY < oldY ? newY : oldY;
-	rect.width = newWidth > oldWidth ? newWidth : oldWidth;
-	rect.height = getFont()->getHeight();
-
-	markRectDamaged(rect);
+	markTextRectDamaged();
 
 	if (raisesEvents()) {
 		_gadgetEventHandler->handleValueChangeEvent(*this);
